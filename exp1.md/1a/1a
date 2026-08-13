@@ -1,0 +1,72 @@
+package java.pkg1;
+
+class BankAccount {
+
+    int accountNumber;
+    String accountHolder;
+    double balance;
+    BankAccount() {
+        accountNumber = 0;
+        accountHolder = "Unknown";
+        balance = 0.0;
+    }
+    BankAccount(int accNo, String name) {
+        accountNumber = accNo;
+        accountHolder = name;
+        balance = 0.0;
+    }
+    BankAccount(int accNo, String name, double bal) {
+        accountNumber = accNo;
+        accountHolder = name;
+        balance = bal;
+    }
+
+    void display() {
+        System.out.println("Account Number : " + accountNumber);
+        System.out.println("Account Holder : " + accountHolder);
+        System.out.println("Balance : " + balance);
+        System.out.println();
+    }
+}
+
+public class Java1 {
+
+    public static void main(String[] args) {
+
+        BankAccount b1 = new BankAccount();
+
+        BankAccount b2 = new BankAccount(101, "Arun");
+
+        BankAccount b3 = new BankAccount(102, "Kumar", 5000);
+
+        System.out.println("First Account");
+        b1.display();
+
+        System.out.println("Second Account");
+        b2.display();
+
+        System.out.println("Third Account");
+        b3.display();
+    }
+}
+
+
+
+
+
+
+
+First Account
+Account Number : 0
+Account Holder : Unknown
+Balance : 0.0
+
+Second Account
+Account Number : 101
+Account Holder : Arun
+Balance : 0.0
+
+Third Account
+Account Number : 102
+Account Holder : Kumar
+Balance : 5000.0
