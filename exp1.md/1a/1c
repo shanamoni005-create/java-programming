@@ -1,0 +1,59 @@
+class ElectricityBill {
+    static double ratePerUnit = 8.5; // Static rate common to all objects
+
+    int consumerNo;
+    String name;
+    int units;
+
+    ElectricityBill(int consumerNo, String name, int units) {
+        this.consumerNo = consumerNo;
+        this.name = name;
+        this.units = units;
+    }
+
+    void calculateBill() {
+        double bill = units * ratePerUnit;
+
+        System.out.println("Consumer No: " + consumerNo);
+        System.out.println("Name: " + name);
+        System.out.println("Units Consumed: " + units);
+        System.out.println("Rate per Unit: " + ratePerUnit);
+        System.out.println("Total Bill: " + bill);
+        System.out.println("-----------------------");
+    }
+}
+
+public class ElectricityBillDemo {
+    public static void main(String[] args) {
+
+        ElectricityBill e1 =
+            new ElectricityBill(201, "monika", 150);
+
+        ElectricityBill e2 =
+            new ElectricityBill(202, "Ajay", 220);
+
+        e1.calculateBill();
+        e2.calculateBill();
+    }
+}
+
+
+
+
+
+
+
+
+Consumer No: 201
+Name: monika
+Units Consumed: 150
+Rate per Unit: 8.5
+Total Bill: 1275.0
+-----------------------
+Consumer No: 202
+Name: Ajay
+Units Consumed: 220
+Rate per Unit: 8.5
+Total Bill: 1870.0
+-----------------------
+    
