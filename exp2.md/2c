@@ -1,0 +1,34 @@
+class StudentData<T> {
+    private T data;
+
+    void setData(T data) {
+        this.data = data;
+    }
+
+    T getData() {
+        return data;
+    }
+}
+
+public class GenericStudentDemo {
+    public static void main(String[] args) {
+
+        StudentData<Integer> rollNumber = new StudentData<>();
+        rollNumber.setData(101);
+        System.out.println("Roll Number: " + rollNumber.getData());
+
+        StudentData<String> name = new StudentData<>();
+        name.setData("monika");
+        System.out.println("Name: " + name.getData());
+
+        StudentData<Double> marks = new StudentData<>();
+        marks.setData(88.5);
+        System.out.println("Marks: " + marks.getData());
+    }
+}
+
+
+output:
+Roll Number: 101
+Name: monika
+Marks: 88.5
