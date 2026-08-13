@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+
+public class AutoboxingDemo {
+    public static void main(String[] args) {
+        double primitivePrice = 499.99;
+        Double productPrice = primitivePrice;
+
+        System.out.println("Autoboxed Price (Double object): " + productPrice);
+        double totalPrice = productPrice + 50.0;
+
+        System.out.println("Unboxed and Calculated Total: " + totalPrice);
+        ArrayList<Integer> quantities = new ArrayList<>();
+
+        quantities.add(10);
+        quantities.add(20);
+        int firstQty = quantities.get(0);
+
+        System.out.println("First Quantity (unboxed): " + firstQty);
+    }
+}
+
+
+
+output:
+Autoboxed Price (Double object): 499.99
+Unboxed and Calculated Total: 549.99
+First Quantity (unboxed): 10
