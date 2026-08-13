@@ -1,0 +1,53 @@
+class CourseRegistration {
+    static int totalRegistrations = 0;
+
+    int studentId;
+    String studentName;
+    String courseName;
+
+    CourseRegistration(int studentId, String studentName, String courseName) {
+        this.studentId = studentId;
+        this.studentName = studentName;
+        this.courseName = courseName;
+
+        totalRegistrations++;
+    }
+
+    void displayDetails() {
+        System.out.println("Student ID: " + studentId);
+        System.out.println("Student Name: " + studentName);
+        System.out.println("Course Registered: " + courseName);
+        System.out.println("-----------------------");
+    }
+}
+
+public class CourseRegistrationDemo {
+    public static void main(String[] args) {
+
+        CourseRegistration s1 =
+            new CourseRegistration(301, "Yogitha", "Java Programming");
+
+        CourseRegistration s2 =
+            new CourseRegistration(302, "Priya", "Python Basics");
+
+        s1.displayDetails();
+        s2.displayDetails();
+
+        System.out.println("Total Registrations: "
+                + CourseRegistration.totalRegistrations);
+    }
+}
+
+
+
+
+output:
+Student ID: 301
+Student Name: Yogitha
+Course Registered: Java Programming
+-----------------------
+Student ID: 302
+Student Name: Priya
+Course Registered: Python Basics
+-----------------------
+Total Registrations: 2
