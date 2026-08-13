@@ -1,0 +1,87 @@
+interface SmartDevice {
+    void operate();
+}
+
+class SmartLight implements SmartDevice, Runnable {
+
+    public void operate() {
+        for (int i = 1; i <= 3; i++) {
+            System.out.println("Light: Blinking cycle " + i);
+
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
+
+    public void run() {
+        operate();
+    }
+}
+
+class SmartFan implements SmartDevice, Runnable {
+
+    public void operate() {
+        for (int i = 1; i <= 3; i++) {
+            System.out.println("Fan: Rotating at speed level " + i);
+
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
+
+    public void run() {
+        operate();
+    }
+}
+
+class SmartAC implements SmartDevice, Runnable {
+
+    public void operate() {
+        for (int i = 1; i <= 3; i++) {
+            System.out.println("AC: Cooling, temperature step " + i);
+
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
+
+    public void run() {
+        operate();
+    }
+}
+
+public class SmartHomeDemo {
+    public static void main(String[] args) {
+
+        Thread lightThread = new Thread(new SmartLight());
+        Thread fanThread = new Thread(new SmartFan());
+        Thread acThread = new Thread(new SmartAC());
+
+        lightThread.start();
+        fanThread.start();
+        acThread.start();
+    }
+}
+
+
+
+
+output:
+Light: Blinking cycle 1
+Fan: Rotating at speed level 1
+AC: Cooling, temperature step 1
+Light: Blinking cycle 2
+Fan: Rotating at speed level 2
+AC: Cooling, temperature step 2
+Light: Blinking cycle 3
+Fan: Rotating at speed level 3
+AC: Cooling, temperature step 3
